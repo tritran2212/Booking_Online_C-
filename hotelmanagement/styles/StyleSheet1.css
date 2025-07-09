@@ -1,0 +1,80 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #74ebd5, #ACB6E5);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    background-color: #ffffffee;
+    width: 350px;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+    text-align: center;
+    animation: slideDown 0.6s ease;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.form-container h2 {
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.form-container label {
+    float: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #444;
+}
+
+.form-container input[type="text"],
+.form-container input[type="password"],
+.form-container .aspNet-TextBox {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+.form-container .aspNet-Button {
+    width: 100%;
+    padding: 12px;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    background: linear-gradient(to right, #36D1DC, #5B86E5);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+    .form-container .aspNet-Button:hover {
+        background: linear-gradient(to right, #5B86E5, #36D1DC);
+    }
+
+.logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+

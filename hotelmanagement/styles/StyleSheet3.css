@@ -1,0 +1,20 @@
+﻿.gridview {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+    .gridview th, .gridview td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .gridview th {
+        background-color: #2c3e50;
+        color: white;
+    }
+
+    .gridview tr:hover {
+        background-color: #f1f1f1;
+    }
