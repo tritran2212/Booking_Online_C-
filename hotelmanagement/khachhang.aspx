@@ -3,7 +3,77 @@
 <html>
 <head>
     <title>Quản lý Khách Hàng</title>
-    <link href="Styles/style.css" rel="stylesheet" />
+    <link href="styles/StyleSheet1.css" rel="stylesheet" />
+    <link href="styles/StyleSheet3.css" rel="stylesheet" />
+    <style>
+        
+/* Header */
+.header {
+    background: linear-gradient(to right, #36D1DC, #5B86E5);
+    color: white;
+    padding: 30px 0 20px 0;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 16px rgba(44,62,80,0.08);
+    margin-bottom: 20px;
+}
+
+/* Navigation Bar */
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.07);
+    padding: 15px 0;
+    margin-bottom: 30px;
+}
+.nav a {
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 8px 18px;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+}
+.nav a:hover, .nav a:focus {
+    background: linear-gradient(to right, #36D1DC, #5B86E5);
+    color: #fff;
+}
+
+/* Main Content */
+.main-content {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(44,62,80,0.10);
+    padding: 40px 30px 30px 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ASP.NET Button ngoài form-container */
+.aspNet-Button {
+    display: inline-block;
+    padding: 12px 32px;
+    font-size: 17px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(to right, #36D1DC, #5B86E5);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.10);
+    cursor: pointer;
+    margin-top: 25px;
+    transition: background 0.3s, transform 0.2s;
+}
+.aspNet-Button:hover {
+    background: linear-gradient(to right, #5B86E5, #36D1DC);
+    transform: translateY(-2px) scale(1.04);
+}
+
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">

@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace hotelmanagement
-{
-
-
-    public partial class ThemPhong
-    {
-
+namespace hotelmanagement {
+    
+    
+    public partial class ThemPhong {
+        
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace hotelmanagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
         /// <summary>
         /// lblMaPhong control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace hotelmanagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMaPhong;
-
+        
         /// <summary>
         /// txtMaPhong control.
         /// </summary>
@@ -40,7 +38,16 @@ namespace hotelmanagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMaPhong;
-
+        
+        /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        
         /// <summary>
         /// lblTenPhong control.
         /// </summary>
@@ -49,7 +56,7 @@ namespace hotelmanagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTenPhong;
-
+        
         /// <summary>
         /// txtTenPhong control.
         /// </summary>
@@ -58,7 +65,7 @@ namespace hotelmanagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTenPhong;
-
+        
         /// <summary>
         /// lblLoaiPhong control.
         /// </summary>
@@ -67,7 +74,7 @@ namespace hotelmanagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblLoaiPhong;
-
+        
         /// <summary>
         /// ddlLoaiPhong control.
         /// </summary>
@@ -76,7 +83,7 @@ namespace hotelmanagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlLoaiPhong;
-
+        
         /// <summary>
         /// lblGiaPhong control.
         /// </summary>
@@ -85,7 +92,7 @@ namespace hotelmanagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblGiaPhong;
-
+        
         /// <summary>
         /// txtGiaPhong control.
         /// </summary>
@@ -94,7 +101,7 @@ namespace hotelmanagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtGiaPhong;
-
+        
         /// <summary>
         /// lblTrangThai control.
         /// </summary>
@@ -103,7 +110,7 @@ namespace hotelmanagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTrangThai;
-
+        
         /// <summary>
         /// ddlTrangThai control.
         /// </summary>
@@ -112,7 +119,25 @@ namespace hotelmanagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlTrangThai;
-
+        
+        /// <summary>
+        /// lblHinhAnh control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblHinhAnh;
+        
+        /// <summary>
+        /// fuHinhAnh control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fuHinhAnh;
+        
         /// <summary>
         /// btnSave control.
         /// </summary>
@@ -121,7 +146,7 @@ namespace hotelmanagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSave;
-
+        
         /// <summary>
         /// btnCancel control.
         /// </summary>
