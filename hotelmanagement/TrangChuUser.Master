@@ -1,0 +1,173 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="TrangChuUser.master.cs" Inherits="hotelmanagement.TrangChuUser" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            height: 100px;
+            width: 100%;
+            background: linear-gradient(to right, #36D1DC, #5B86E5);
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 40px;
+        }
+
+        .btn-header {
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.3s, text-decoration 0.3s;
+        }
+
+        .btn-header:hover {
+            text-decoration: underline;
+            color: #e0e0e0;
+        }
+
+        .cont {
+            flex: 1;
+            padding: 0;
+        }
+
+        .hero {
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .hero-slider {
+            display: inline-flex;
+        }
+
+        .hero-slider img {
+            width: 80%;
+            max-width: 100%;
+            height: auto;
+            flex-shrink: 0;
+            object-fit: cover;
+            margin-right: 10px;
+            border-radius: 8px;
+            max-height: 500px;
+        }
+
+        .hero::-webkit-scrollbar {
+            display: none;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+            padding: 20px 40px;
+            border-top: 1px solid #ddd;
+            background: #f8f8f8;
+        }
+
+        .footer-left a,
+        .footer-right a {
+            margin-left: 15px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .footer-left a:first-child {
+            margin-left: 0;
+        }
+
+        .footer-right a {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .account-dropdown-wrapper {
+            display: inline-block;
+            position: relative;
+        }
+
+        .account-dropdown {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background-color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .account-dropdown:hover {
+            border-color: #36D1DC;
+            box-shadow: 0 0 5px rgba(54, 209, 220, 0.3);
+        }
+
+        .account-dropdown:focus {
+            outline: none;
+            border-color: #36D1DC;
+            box-shadow: 0 0 5px rgba(54, 209, 220, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+            <div class="header">
+                <h1>
+                    <a href="#" aria-label="Trang chủ Airbnb">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_Bélo.svg/2560px-Airbnb_Logo_Bélo.svg.png" alt="Airbnb">
+                    </a>
+                </h1>
+                <div>
+                    <asp:LinkButton ID="btnTrangChu" CssClass="btn-header" runat="server">Trang Chủ</asp:LinkButton>
+                    <asp:LinkButton ID="btnChiTietPhong" CssClass="btn-header" runat="server">Chi Tiết Phòng</asp:LinkButton>
+                    <asp:LinkButton ID="btnLienHe" CssClass="btn-header" runat="server" OnClick="btnLienHe_Click">Liên Hệ</asp:LinkButton>
+                </div>
+            </div>
+
+            <div class="cont">
+                <asp:ContentPlaceHolder ID="HeroContent" runat="server"></asp:ContentPlaceHolder>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+            </div>
+
+            <div class="footer">
+                <div class="footer-left">
+                    <span>© 2025 Airbnb, Inc.</span>
+                    <a href="#">Quyền riêng tư</a>
+                    <a href="#">Điều khoản</a>
+                    <a href="#">Sơ đồ trang web</a>
+                </div>
+                <div class="footer-right">
+                    <a href="#"><span> Tiếng Việt (VN)</span></a>
+                    <a href="#"><span> VND</span></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

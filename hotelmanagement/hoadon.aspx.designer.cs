@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace hotelmanagement
-{
-
-
-    public partial class hoadon
-    {
-
+namespace hotelmanagement {
+    
+    
+    public partial class Hoadon {
+        
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace hotelmanagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
         /// <summary>
         /// gvHoaDon control.
         /// </summary>
@@ -31,5 +29,14 @@ namespace hotelmanagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvHoaDon;
+        
+        /// <summary>
+        /// btnAddHoaDon control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddHoaDon;
     }
 }

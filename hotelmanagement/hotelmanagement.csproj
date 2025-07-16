@@ -71,6 +71,7 @@
     <Content Include="datphong.aspx" />
     <Content Include="Global.asax" />
     <Content Include="hoadon.aspx" />
+    <Content Include="Home.aspx" />
     <Content Include="Images\5219124.jpg" />
     <Content Include="khachhang.aspx" />
     <Content Include="Login.aspx" />
@@ -78,8 +79,12 @@
     <Content Include="styles\StyleSheet1.css" />
     <Content Include="styles\StyleSheet2.css" />
     <Content Include="styles\StyleSheet3.css" />
+    <Content Include="ThemHoadon.aspx" />
     <Content Include="Themphong.aspx" />
     <Content Include="Trangchu.aspx" />
+    <Content Include="TrangChuUser.aspx" />
+    <Content Include="TrangLienHe.aspx" />
+    <Content Include="TrangMessage.aspx" />
     <Content Include="traphong.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -100,6 +105,13 @@
     </Compile>
     <Compile Include="hoadon.aspx.designer.cs">
       <DependentUpon>hoadon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="KetNoi.cs" />
     <Compile Include="khachhang.aspx.cs">
@@ -124,6 +136,13 @@
       <DependentUpon>Phong.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThemHoadon.aspx.cs">
+      <DependentUpon>ThemHoadon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThemHoadon.aspx.designer.cs">
+      <DependentUpon>ThemHoadon.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Themphong.aspx.cs">
       <DependentUpon>Themphong.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -138,6 +157,34 @@
     <Compile Include="Trangchu.aspx.designer.cs">
       <DependentUpon>Trangchu.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TrangChuUser.aspx.cs">
+      <DependentUpon>TrangChuUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrangChuUser.aspx.designer.cs">
+      <DependentUpon>TrangChuUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrangChuUser.Master.cs">
+      <DependentUpon>TrangChuUser.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrangChuUser.Master.designer.cs">
+      <DependentUpon>TrangChuUser.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TrangLienHe.aspx.cs">
+      <DependentUpon>TrangLienHe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrangLienHe.aspx.designer.cs">
+      <DependentUpon>TrangLienHe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrangMessage.aspx.cs">
+      <DependentUpon>TrangMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrangMessage.aspx.designer.cs">
+      <DependentUpon>TrangMessage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="traphong.aspx.cs">
       <DependentUpon>traphong.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -148,6 +195,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="TrangChuUser.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,2 @@
+﻿INSERT INTO PHONG VALUES
+('P106', N'Phòng 106', N'Đơn', 400000, N'Trống','P106.jpg');

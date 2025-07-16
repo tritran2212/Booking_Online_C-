@@ -10,7 +10,7 @@
 namespace hotelmanagement {
     
     
-    public partial class KhachHang {
+    public partial class ThemHoadon {
         
         /// <summary>
         /// form1 control.
@@ -22,49 +22,58 @@ namespace hotelmanagement {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// txtMaKH control.
+        /// lblMaDatPhong control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMaKH;
+        protected global::System.Web.UI.WebControls.Label lblMaDatPhong;
         
         /// <summary>
-        /// txtHoTen control.
+        /// txtMaDatPhong control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHoTen;
+        protected global::System.Web.UI.WebControls.TextBox txtMaDatPhong;
         
         /// <summary>
-        /// txtCMND control.
+        /// lblNgayLap control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCMND;
+        protected global::System.Web.UI.WebControls.Label lblNgayLap;
         
         /// <summary>
-        /// txtSDT control.
+        /// txtNgayLap control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSDT;
+        protected global::System.Web.UI.WebControls.TextBox txtNgayLap;
         
         /// <summary>
-        /// txtEmail control.
+        /// lblTongTien control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        protected global::System.Web.UI.WebControls.Label lblTongTien;
+        
+        /// <summary>
+        /// txtTongTien control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTongTien;
         
         /// <summary>
         /// btnSave control.
@@ -76,12 +85,12 @@ namespace hotelmanagement {
         protected global::System.Web.UI.WebControls.Button btnSave;
         
         /// <summary>
-        /// gvKhachHang control.
+        /// btnCancel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvKhachHang;
+        protected global::System.Web.UI.WebControls.Button btnCancel;
     }
 }

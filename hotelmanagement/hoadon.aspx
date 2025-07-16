@@ -1,9 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="hoadon.aspx.cs" Inherits="hotelmanagement.hoadon" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Hoadon.aspx.cs" Inherits="hotelmanagement.Hoadon" %>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hóa Đơn</title>
+    <title>Quản lý Hóa Đơn</title>
     <link href="styles/StyleSheet1.css" rel="stylesheet" />
     <style>
         body {
@@ -50,6 +50,24 @@
             max-width: 900px;
             margin: 0 auto;
         }
+        .aspNet-Button {
+            display: inline-block;
+            padding: 12px 32px;
+            font-size: 17px;
+            font-weight: bold;
+            color: #fff;
+            background: linear-gradient(to right, #36D1DC, #5B86E5);
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(44,62,80,0.10);
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .aspNet-Button:hover {
+            background: linear-gradient(to right, #5B86E5, #36D1DC);
+            transform: translateY(-2px) scale(1.04);
+        }
         .gridview {
             width: 100%;
             border-collapse: collapse;
@@ -90,15 +108,22 @@
         </div>
 
         <div class="main-content">
-            <asp:GridView ID="gvHoaDon" runat="server" AutoGenerateColumns="False" CssClass="gridview">
+            
+            <asp:GridView ID="gvHoaDon" runat="server" AutoGenerateColumns="False" DataKeyNames="MaHD"
+                OnRowEditing="gvHoaDon_RowEditing" OnRowUpdating="gvHoaDon_RowUpdating"
+                OnRowCancelingEdit="gvHoaDon_RowCancelingEdit" OnRowDeleting="gvHoaDon_RowDeleting"
+                CssClass="gridview">
+
                 <Columns>
-                    <asp:BoundField DataField="MAHD" HeaderText="Mã HĐ" />
-                    <asp:BoundField DataField="HOTEN" HeaderText="Khách hàng" />
-                    <asp:BoundField DataField="TENPHONG" HeaderText="Phòng" />
-                    <asp:BoundField DataField="NGAYLAP" HeaderText="Ngày lập" />
-                    <asp:BoundField DataField="TONGTIEN" HeaderText="Tổng tiền (VND)" DataFormatString="{0:N0} đ" />
+                    <asp:BoundField DataField="MaHD" HeaderText="Mã HĐ" ReadOnly="true" />
+                    <asp:BoundField DataField="MaDatPhong" HeaderText="Mã Đặt Phòng" />
+                    <asp:BoundField DataField="NgayLap" HeaderText="Ngày Lập" />
+                    <asp:BoundField DataField="TongTien" HeaderText="Tổng Tiền (VND)" />
+
+                    <asp:CommandField ShowEditButton="True" ShowDeleteButton="True" />
                 </Columns>
             </asp:GridView>
+            <asp:Button ID="btnAddHoaDon" runat="server" Text="Thêm Hóa Đơn" OnClick="btnAddHoaDon_Click" CssClass="aspNet-Button" />
         </div>
     </form>
 </body>

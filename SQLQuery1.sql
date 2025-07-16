@@ -1,0 +1,6 @@
+﻿UPDATE PHONG
+SET HinhAnh = 'P105.jpg'
+WHERE MaPhong = 'P105';
+UPDATE PHONG
+SET HinhAnh = 'P107.jpg'
+WHERE MaPhong = 'P106';
