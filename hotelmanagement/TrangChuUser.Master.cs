@@ -18,5 +18,10 @@ namespace hotelmanagement
         {
             Server.Transfer("TrangLienHe.aspx");
         }
+
+        protected void btnTrangChu_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("TrangChuUser.aspx");
+        }
     }
 }

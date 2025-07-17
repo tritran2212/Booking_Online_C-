@@ -16,7 +16,8 @@
         .header {
             display: flex;
             align-items: center;
-            justify-content: space-around;
+            justify-content: space-between;
+            padding: 0 40px;
             height: 100px;
             width: 100%;
             background: linear-gradient(to right, #36D1DC, #5B86E5);
@@ -41,6 +42,49 @@
         .btn-header:hover {
             text-decoration: underline;
             color: #e0e0e0;
+        }
+
+        .header-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .account-wrapper {
+            position: relative;
+            margin-left: 30px;
+        }
+
+        .account-icon {
+            font-size: 26px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 40px;
+            background-color: white;
+            min-width: 180px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .dropdown-content a,
+        .dropdown-content asp\:linkbutton {
+            display: block;
+            padding: 10px;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .dropdown-content a:hover,
+        .dropdown-content asp\:linkbutton:hover {
+            background-color: #f0f0f0;
         }
 
         .cont {
@@ -103,55 +147,62 @@
         .footer a:hover {
             text-decoration: underline;
         }
-
-        .account-dropdown-wrapper {
-            display: inline-block;
-            position: relative;
-        }
-
-        .account-dropdown {
-            padding: 8px 12px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            background-color: #fff;
-            font-size: 14px;
-            cursor: pointer;
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-
-        .account-dropdown:hover {
-            border-color: #36D1DC;
-            box-shadow: 0 0 5px rgba(54, 209, 220, 0.3);
-        }
-
-        .account-dropdown:focus {
-            outline: none;
-            border-color: #36D1DC;
-            box-shadow: 0 0 5px rgba(54, 209, 220, 0.5);
-        }
     </style>
+
+    <script type="text/javascript">
+        function toggleDropdown() {
+            var dropdown = document.getElementById("userDropdown");
+            if (dropdown.style.display === "block") {
+                dropdown.style.display = "none";
+            } else {
+                dropdown.style.display = "block";
+            }
+        }
+
+        window.onclick = function (event) {
+            if (!event.target.matches('.account-icon')) {
+                var dropdown = document.getElementById("userDropdown");
+                if (dropdown && dropdown.style.display === "block") {
+                    dropdown.style.display = "none";
+                }
+            }
+        }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="container">
+            <!-- Header -->
             <div class="header">
                 <h1>
                     <a href="#" aria-label="Trang chủ Airbnb">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_Bélo.svg/2560px-Airbnb_Logo_Bélo.svg.png" alt="Airbnb">
                     </a>
                 </h1>
-                <div>
-                    <asp:LinkButton ID="btnTrangChu" CssClass="btn-header" runat="server">Trang Chủ</asp:LinkButton>
+
+                <div class="header-links">
+                    <asp:LinkButton ID="btnTrangChu" CssClass="btn-header" runat="server" OnClick="btnTrangChu_Click">Trang Chủ</asp:LinkButton>
                     <asp:LinkButton ID="btnChiTietPhong" CssClass="btn-header" runat="server">Chi Tiết Phòng</asp:LinkButton>
                     <asp:LinkButton ID="btnLienHe" CssClass="btn-header" runat="server" OnClick="btnLienHe_Click">Liên Hệ</asp:LinkButton>
+
+                    <!-- User icon dropdown -->
+                    <div class="account-wrapper">
+                        <i class="fas fa-user-circle account-icon" onclick="toggleDropdown()"></i>
+                        <div id="userDropdown" class="dropdown-content">
+                            <asp:LinkButton ID="lnkTrangThaiDatPhong" runat="server" PostBackUrl="~/TrangThaiDatPhong.aspx">Trạng thái đặt phòng</asp:LinkButton>
+                            <asp:LinkButton ID="lnkDangXuat" runat="server" >Đăng xuất</asp:LinkButton>
+                        </div>
+                    </div>
                 </div>
             </div>
 
+            <!-- Main content -->
             <div class="cont">
                 <asp:ContentPlaceHolder ID="HeroContent" runat="server"></asp:ContentPlaceHolder>
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
             </div>
 
+            <!-- Footer -->
             <div class="footer">
                 <div class="footer-left">
                     <span>© 2025 Airbnb, Inc.</span>

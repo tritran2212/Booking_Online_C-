@@ -58,6 +58,24 @@ namespace hotelmanagement {
         protected global::System.Web.UI.WebControls.LinkButton btnLienHe;
         
         /// <summary>
+        /// lnkTrangThaiDatPhong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkTrangThaiDatPhong;
+        
+        /// <summary>
+        /// lnkDangXuat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkDangXuat;
+        
+        /// <summary>
         /// HeroContent control.
         /// </summary>
         /// <remarks>

@@ -34,6 +34,72 @@
         .hero-container::-webkit-scrollbar {
             display: none; /* Ẩn thanh cuộn cho đẹp */
         }
+         .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .room-card {
+        width: 250px;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        padding: 16px;
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .room-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .room-card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+
+    .room-card h3 {
+        font-size: 18px;
+        margin: 10px 0 5px;
+    }
+
+    .card-buttons {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .btn-detail, .btn-book {
+        flex: 1;
+        padding: 6px;
+        border: none;
+        border-radius: 6px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .btn-detail {
+        background: #3498db;
+    }
+
+    .btn-book {
+        background: #2ecc71;
+    }
+
+    .btn-detail:hover {
+        background: #2980b9;
+    }
+
+    .btn-book:hover {
+        background: #27ae60;
+    }
+    .room-list {}
     </style>
 </asp:Content>
 
@@ -50,5 +116,23 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h2 style="text-align:center; margin-top:40px;">Chào mừng bạn đến với Airbnb</h2>
+    <h2 style="text-align:center; margin: 40px 0;">Danh sách phòng hiện có</h2>
+
+    <div class="card-container">
+        <asp:DataList ID="dlPhong" runat="server" RepeatDirection="Horizontal" RepeatColumns="4" CssClass="room-list" OnSelectedIndexChanged="dlPhong_SelectedIndexChanged" Width="740px">
+            <ItemTemplate>
+                <div class="room-card">
+                    <asp:Image ID="imgHinhAnh" runat="server" ImageUrl='<%# "~/Images/" + Eval("HinhAnh") %>' Width="150px" />
+                    <h3><%# Eval("TenPhong") %></h3>
+                    <p>Loại phòng: <%# Eval("LoaiPhong") %></p>
+                    <p>Giá: <strong><%# String.Format("{0:#,##0} VND", Eval("GiaPhong")) %></strong></p>
+                    <p>Trạng thái: <%# Eval("TrangThai") %></p>
+                    <div class="card-buttons">
+                        <asp:Button runat="server" Text="Xem chi tiết" CssClass="btn-detail" CommandArgument='<%# Eval("MaPhong") %>' />
+                        <asp:Button runat="server" Text="Đặt phòng" CssClass="btn-book" CommandArgument='<%# Eval("MaPhong") %>'  />
+                    </div>
+                </div>
+            </ItemTemplate>
+        </asp:DataList>
+    </div>
 </asp:Content>
