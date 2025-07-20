@@ -55,5 +55,17 @@ namespace hotelmanagement
             // Chuyển hướng đến chi tiết phòng
             Response.Redirect($"TrangChiTietPhong.aspx?maphong={maPhong}");
         }
+
+        protected void Unnamed1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Unnamed2_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            string maPhong = btn.CommandArgument;
+            Response.Redirect("DatPhong.aspx?MaPhong=" + maPhong);
+        }
     }
 }

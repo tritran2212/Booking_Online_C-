@@ -129,7 +129,7 @@
                     <p>Trạng thái: <%# Eval("TrangThai") %></p>
                     <div class="card-buttons">
                         <asp:Button runat="server" Text="Xem chi tiết" CssClass="btn-detail" CommandArgument='<%# Eval("MaPhong") %>' />
-                        <asp:Button runat="server" Text="Đặt phòng" CssClass="btn-book" CommandArgument='<%# Eval("MaPhong") %>'  />
+                        <asp:Button runat="server" Text="Đặt phòng" CssClass="btn-book" CommandArgument='<%# Eval("MaPhong") %>' OnClick="Unnamed2_Click"  />
                     </div>
                 </div>
             </ItemTemplate>

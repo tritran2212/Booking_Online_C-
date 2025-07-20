@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace hotelmanagement
-{
-
-
-    public partial class datphong
-    {
-
+namespace hotelmanagement {
+    
+    
+    public partial class DatPhong {
+        
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -22,16 +20,34 @@ namespace hotelmanagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
         /// <summary>
-        /// ddlLoaiPhong control.
+        /// lblThongBao control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlLoaiPhong;
-
+        protected global::System.Web.UI.WebControls.Label lblThongBao;
+        
+        /// <summary>
+        /// txtMaPhong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMaPhong;
+        
+        /// <summary>
+        /// txtMaKH control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMaKH;
+        
         /// <summary>
         /// txtNgayNhan control.
         /// </summary>
@@ -40,7 +56,7 @@ namespace hotelmanagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNgayNhan;
-
+        
         /// <summary>
         /// txtNgayTra control.
         /// </summary>
@@ -49,23 +65,14 @@ namespace hotelmanagement
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNgayTra;
-
+        
         /// <summary>
-        /// btnTimPhong control.
+        /// btnDatPhong control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnTimPhong;
-
-        /// <summary>
-        /// gvPhongTrong control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvPhongTrong;
+        protected global::System.Web.UI.WebControls.Button btnDatPhong;
     }
 }

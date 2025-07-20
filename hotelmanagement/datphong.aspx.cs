@@ -1,65 +1,64 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Data;
+using System.Data.SqlClient;
 
 namespace hotelmanagement
 {
-	public partial class datphong : System.Web.UI.Page
-	{
-		protected void Page_Load(object sender, EventArgs e)
-		{
+    public partial class DatPhong : System.Web.UI.Page
+    {
+        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ADMIN\Downloads\Hotel\hotelmanagement\hotelmanagement\App_Data\DBBooking.mdf;Integrated Security=True";
 
-		}
-        protected void btnTimPhong_Click(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
         {
-            string loaiPhong = ddlLoaiPhong.SelectedValue;
-            string ngayNhan = txtNgayNhan.Text;
-            string ngayTra = txtNgayTra.Text;
-
-            if (loaiPhong == "" || ngayNhan == "" || ngayTra == "")
+            if (!IsPostBack)
             {
-                Response.Write("<script>alert('Vui lòng nhập đầy đủ thông tin!');</script>");
-                return;
+                // Lấy mã phòng từ URL
+                string maPhong = Request.QueryString["MaPhong"];
+                if (!string.IsNullOrEmpty(maPhong))
+                {
+                    txtMaPhong.Text = maPhong;
+                }
             }
-
-            // GIẢ LẬP phòng trống
-            DataTable dt = new DataTable();
-            dt.Columns.Add("MAPHONG");
-            dt.Columns.Add("TENPHONG");
-            dt.Columns.Add("LOAIPHONG");
-            dt.Columns.Add("GIAPHONG");
-
-            if (loaiPhong == "Đơn")
-            {
-                dt.Rows.Add("P101", "Phòng Đơn 1", "Đơn", "500000");
-                dt.Rows.Add("P102", "Phòng Đơn 2", "Đơn", "500000");
-            }
-            else if (loaiPhong == "Đôi")
-            {
-                dt.Rows.Add("P201", "Phòng Đôi 1", "Đôi", "800000");
-            }
-            else if (loaiPhong == "VIP")
-            {
-                dt.Rows.Add("P301", "VIP View Biển", "VIP", "1500000");
-            }
-
-            gvPhongTrong.DataSource = dt;
-            gvPhongTrong.DataBind();
         }
 
-        protected void gvPhongTrong_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void btnDatPhong_Click(object sender, EventArgs e)
         {
-            if (e.CommandName == "Dat")
+            string maPhong = txtMaPhong.Text;
+            string maKH = txtMaKH.Text;
+            DateTime ngayNhan = DateTime.Parse(txtNgayNhan.Text);
+            DateTime ngayTra = DateTime.Parse(txtNgayTra.Text);
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string maPhong = e.CommandArgument.ToString();
-                // TODO: lưu thông tin đặt phòng vào DB
-                Response.Write($"<script>alert('Đã đặt phòng {maPhong} thành công!');</script>");
+                string query = "INSERT INTO DATPHONG (MaKH, MaPhong, NgayNhan, NgayTra, TrangThai) " +
+                               "VALUES (@MaKH, @MaPhong, @NgayNhan, @NgayTra, N'Đã đặt')";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@MaKH", maKH);
+                cmd.Parameters.AddWithValue("@MaPhong", maPhong);
+                cmd.Parameters.AddWithValue("@NgayNhan", ngayNhan);
+                cmd.Parameters.AddWithValue("@NgayTra", ngayTra);
+
+                try
+                {
+                    conn.Open();
+                    int rows = cmd.ExecuteNonQuery();
+                    if (rows > 0)
+                    {
+                        lblThongBao.Text = "✅ Đặt phòng thành công!";
+                        lblThongBao.ForeColor = System.Drawing.Color.Green;
+                    }
+                    else
+                    {
+                        lblThongBao.Text = "❌ Đặt phòng thất bại.";
+                        lblThongBao.ForeColor = System.Drawing.Color.Red;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    lblThongBao.Text = "❌ Lỗi: " + ex.Message;
+                    lblThongBao.ForeColor = System.Drawing.Color.Red;
+                }
             }
         }
     }
 }
-	
